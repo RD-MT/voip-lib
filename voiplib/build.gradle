@@ -38,11 +38,14 @@ task sourceJar(type: Jar) {
 publishing {
     publications {
         release(MavenPublication) {
-            groupId "com.github.RD-MT"
+            afterEvaluate {
+                from components.release
+            }
+            /*groupId "com.github.RD-MT"
             artifactId "voip-lib"
-            version "1.0.3"
-            artifact "$buildDir/outputs/aar/voiplib-release.aar"
-            artifact sourceJar
+            version "1.0.3"*/
+
+            /*artifact sourceJar*/
         }
     }
 }
