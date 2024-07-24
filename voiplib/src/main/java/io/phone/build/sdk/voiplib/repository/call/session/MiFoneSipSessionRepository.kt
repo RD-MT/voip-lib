@@ -1,12 +1,12 @@
 package io.phone.build.sdk.voiplib.repository.call.session
 
-import org.libs.core.Address
-import org.libs.core.CoreException
-import org.libs.core.Reason
+import org.linphone.core.Address
+import org.linphone.core.CoreException
+import org.linphone.core.Reason
 import io.phone.build.sdk.voipsdkandroid.PIL
 import io.phone.build.sdk.voiplib.model.Call
 import io.phone.build.sdk.voiplib.repository.MiFoneCoreInstanceManager
-import org.libs.core.Call as LinphoneCall
+import org.linphone.core.Call as LinphoneCall
 
 internal class MiFoneSipSessionRepository(private val pil: PIL, private val mifoneCoreInstanceManager: MiFoneCoreInstanceManager) {
 

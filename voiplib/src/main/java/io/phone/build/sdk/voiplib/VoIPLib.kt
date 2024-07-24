@@ -10,7 +10,7 @@ import io.phone.build.sdk.voiplib.repository.MiFoneCoreInstanceManager
 import io.phone.build.sdk.voiplib.repository.call.controls.MiFoneSipActiveCallControlsRepository
 import io.phone.build.sdk.voiplib.repository.call.session.MiFoneSipSessionRepository
 import io.phone.build.sdk.voiplib.repository.registration.MiFoneSipRegisterRepository
-import org.libs.core.Factory
+import org.linphone.core.Factory
 
 typealias RegistrationCallback = (RegistrationState) -> Unit
 

@@ -1,9 +1,9 @@
 package io.phone.build.sdk.voiplib.model
 
-import org.libs.core.Call.Dir.Incoming
-import org.libs.core.Call.Dir.Outgoing
+import org.linphone.core.Call.Dir.Incoming
+import org.linphone.core.Call.Dir.Outgoing
 import io.phone.build.sdk.voiplib.repository.PreservedInviteData
-import org.libs.core.Call as MiFoneCall
+import org.linphone.core.Call as MiFoneCall
 
 class Call(val libCall: MiFoneCall) {
 

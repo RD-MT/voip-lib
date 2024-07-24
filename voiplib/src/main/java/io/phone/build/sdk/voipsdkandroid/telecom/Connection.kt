@@ -3,7 +3,7 @@ package io.phone.build.sdk.voipsdkandroid.telecom
 import android.annotation.SuppressLint
 import android.telecom.CallAudioState
 import android.telecom.DisconnectCause
-import org.libs.core.Reason
+import org.linphone.core.Reason
 import io.phone.build.sdk.voipsdkandroid.PIL
 import io.phone.build.sdk.voipsdkandroid.call.Calls
 import io.phone.build.sdk.voipsdkandroid.call.VoipLibCall

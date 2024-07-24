@@ -9,7 +9,7 @@ import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.os.PowerManager
-import org.libs.core.tools.service.CoreService
+import org.linphone.core.tools.service.CoreService
 import io.phone.build.sdk.voipsdkandroid.PIL
 import io.phone.build.sdk.voipsdkandroid.call.CallDirection
 import io.phone.build.sdk.voipsdkandroid.call.CallState

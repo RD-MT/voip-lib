@@ -4,13 +4,11 @@
 
     <application
         android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.VoIPTest"
+        android:theme="@style/Theme.VialerVoIPPlatformIntegrationLayer"
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
@@ -21,6 +19,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.call.CallActivity"
+            android:launchMode="singleTask"
+            android:exported="true" />
+        <activity
+            android:name=".ui.call.IncomingCallActivity"
+            android:launchMode="singleTask"
+            android:exported="true" />
+        <meta-data
+            android:name="io.phone.build.voipsdkandroid.CALL_ACTIVITY"
+            android:value="io.phone.build.voiptest.ui.call.CallActivity" />
+
+        <meta-data
+            android:name="io.phone.build.voipsdkandroid.INCOMING_CALL_ACTIVITY"
+            android:value="io.phone.build.voiptest.ui.call.IncomingCallActivity" />
     </application>
 
 </manifest>

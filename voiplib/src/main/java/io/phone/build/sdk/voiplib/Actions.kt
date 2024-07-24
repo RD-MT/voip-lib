@@ -2,8 +2,8 @@ package io.phone.build.sdk.voiplib
 
 import android.Manifest
 import androidx.annotation.RequiresPermission
-import org.libs.core.AudioDevice
-import org.libs.core.Reason
+import org.linphone.core.AudioDevice
+import org.linphone.core.Reason
 import io.phone.build.sdk.voipsdkandroid.di.di
 import io.phone.build.sdk.voiplib.model.AttendedTransferSession
 import io.phone.build.sdk.voiplib.model.Call

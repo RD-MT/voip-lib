@@ -1,6 +1,6 @@
 package io.phone.build.sdk.voiplib.repository.initialize
 
-import org.libs.core.AudioDevice
+import org.linphone.core.AudioDevice
 import io.phone.build.sdk.voiplib.model.Call
 
 interface CallListener {

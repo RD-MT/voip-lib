@@ -1,10 +1,10 @@
 package io.phone.build.sdk.voiplib.repository.call.controls
 
 import com.google.gson.GsonBuilder
-import org.libs.core.AudioDevice
-import org.libs.core.AudioDevice.Capabilities
-import org.libs.core.Core
-import org.libs.core.StreamType
+import org.linphone.core.AudioDevice
+import org.linphone.core.AudioDevice.Capabilities
+import org.linphone.core.Core
+import org.linphone.core.StreamType
 import io.phone.build.sdk.voipsdkandroid.logWithContext
 import io.phone.build.sdk.voipsdkandroid.logging.LogLevel
 import io.phone.build.sdk.voiplib.model.AttendedTransferSession
@@ -65,7 +65,7 @@ internal class MiFoneSipActiveCallControlsRepository(private val mifoneCoreInsta
             .create()
             .toJson(buildCallInfo(call.libCall))
 
-    internal fun routeAudioTo(types: List<AudioDevice.Type>, call: org.libs.core.Call? = null) {
+    internal fun routeAudioTo(types: List<AudioDevice.Type>, call: org.linphone.core.Call? = null) {
         if (core.callsNb == 0) {
             log("No call found, aborting [${types.displayName}] audio route change")
             return
@@ -110,7 +110,7 @@ internal class MiFoneSipActiveCallControlsRepository(private val mifoneCoreInsta
     private fun log(message: String, level: LogLevel = LogLevel.INFO) =
         logWithContext(message, "ACTIVE-SIP-CALLS", level)
 
-    private fun buildCallInfo(call: org.libs.core.Call): Map<String, Any> = mapOf(
+    private fun buildCallInfo(call: org.linphone.core.Call): Map<String, Any> = mapOf(
         "audio" to mapOf(
             "codec" to call.currentParams.usedAudioPayloadType?.description,
             "codecMime" to call.currentParams.usedAudioPayloadType?.mimeType,
