@@ -50,7 +50,6 @@ import kotlin.coroutines.suspendCoroutine
     val audio: AudioManager by di.koin.inject()
     val events: EventsManager by di.koin.inject()
     val calls: Calls by di.koin.inject()
-    // val pushToken = TokenFetcher(app.middleware)
 
     val sessionState: CallSessionState
         get() = CallSessionState(calls.active, calls.inactive, audio.state)
@@ -126,9 +125,7 @@ import kotlin.coroutines.suspendCoroutine
         }
 
         androidCallFramework.prune()
-        if (auth.isNullOrInvalid) throw NoAuthenticationCredentialsException()
-
-        // pushToken.request()
+        if (licenceConfig!!.isValid) throw NoAuthenticationCredentialsException()
 
         phoneLibHelper.apply {
             register { success ->
@@ -140,7 +137,7 @@ import kotlin.coroutines.suspendCoroutine
         versionInfo = VersionInfo.build(app.application, voipLib)
     }
 
-    fun base64Decode(input: String?): String {
+    private fun base64Decode(input: String?): String {
         if (input.isNullOrEmpty()) {
             throw IllegalArgumentException("Input cannot be null or empty")
         }
@@ -148,7 +145,7 @@ import kotlin.coroutines.suspendCoroutine
         return String(decodedBytes, Charsets.UTF_8)
     }
 
-    fun decodeTokenThreeTimes(token: String?): String? {
+    private fun decodeTokenThreeTimes(token: String?): String? {
         if (token.isNullOrEmpty()) {
             return null
         }
@@ -159,14 +156,14 @@ import kotlin.coroutines.suspendCoroutine
         return decodedToken
     }
 
-    fun sliceStringWithKey(input: String?, key: String?): List<String> {
+    private fun sliceStringWithKey(input: String?, key: String?): List<String> {
         if (input.isNullOrEmpty() || key.isNullOrEmpty()) {
             throw IllegalArgumentException("Input and key cannot be null or empty")
         }
         return input.split(key)
     }
 
-    fun decodeEachPart(parts: List<String>?): List<String> {
+    private fun decodeEachPart(parts: List<String>?): List<String> {
         if (parts.isNullOrEmpty()) {
             throw IllegalArgumentException("Parts cannot be null or empty")
         }

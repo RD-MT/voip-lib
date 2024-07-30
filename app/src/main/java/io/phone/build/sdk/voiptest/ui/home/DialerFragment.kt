@@ -8,10 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import io.phone.build.sdk.voiptest.R
 import io.phone.build.sdk.voipsdkandroid.PIL
+import io.phone.build.sdk.voipsdkandroid.contacts.SupplementaryContact
 import io.phone.build.sdk.voipsdkandroid.events.Event
 import io.phone.build.sdk.voipsdkandroid.events.PILEventListener
+import io.phone.build.sdk.voiptest.R
+import io.phone.build.sdk.voiptest.ui.Dialer
 
 class DialerFragment : Fragment(), PILEventListener {
 
@@ -60,6 +62,7 @@ class DialerFragment : Fragment(), PILEventListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         /*dialer.onCallListener = Dialer.OnCallListener { number ->
             requestCallingPermissions()

@@ -2,8 +2,17 @@ package io.phone.build.sdk.voiptest.ui
 
 import android.content.Context
 import android.util.AttributeSet
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TableLayout
+import androidx.core.view.children
+import androidx.core.view.forEach
 import io.phone.build.sdk.voiptest.R
+/*import kotlinx.android.synthetic.main.dialer.view.backspace
+import kotlinx.android.synthetic.main.dialer.view.callButton
+import kotlinx.android.synthetic.main.dialer.view.digitEntryWindow
+import kotlinx.android.synthetic.main.dialer.view.keypad*/
 import kotlin.properties.Delegates
 
 class Dialer @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null) : TableLayout(context, attrs) {
@@ -33,9 +42,9 @@ class Dialer @JvmOverloads constructor(context: Context, attrs: AttributeSet? = 
                     }
                 }
             }
-        }
+        }*/
 
-        backspace.setOnClickListener {
+        /*backspace.setOnClickListener {
             if (digits.isNotBlank()) {
                 digits = digits.substring(0, digits.length - 1)
             }

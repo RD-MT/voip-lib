@@ -12,6 +12,8 @@ class Builder internal constructor() {
 
     var preferences: Preferences = Preferences.DEFAULT
 
+    var oauth: AuthAssistant? = null
+
     internal fun start(applicationSetup: ApplicationSetup): PIL {
         if (PIL.isInitialized) {
             throw PILAlreadyInitializedException()
@@ -23,6 +25,8 @@ class Builder internal constructor() {
 
         setupApplicationBackgroundListeners(pil)
         pil.preferences = this.preferences
+
+        oauth?.let { pil.licenceConfig = it }
 
         return pil
     }
@@ -43,6 +47,7 @@ class InvalidLicenceException(
  *
  */
 fun startAndroidPIL(init: Builder.() -> ApplicationSetup): PIL {
+
     val builder = Builder()
 
     val applicationSetup = init.invoke(builder)

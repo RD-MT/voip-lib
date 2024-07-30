@@ -36,12 +36,6 @@ android {
         }
     }
 
-    /*externalNativeBuild {
-        cmake {
-            path "src/main/cpp/CMakeLists.txt"
-            version "3.10.2"
-        }
-    }*/
 }
 
 task sourceJar(type: Jar) {
@@ -56,7 +50,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.RD-MT'
                 artifactId = 'voip-lib'
-                version = '1.0.7'
+                version = '1.0.8'
             }
         }
     }
@@ -64,9 +58,6 @@ afterEvaluate {
 
 dependencies {
 
-    /*implementation fileTree(include: ['*.jar'], dir: 'jniLibs')
-    implementation fileTree(include: ['*.so'], dir: 'src/main/jniLibs')*/
-    implementation(name: 'linphone-sdk-android-5.2.110', ext: 'aar')
     implementation libs.retrofit
     implementation libs.converter.gson
     implementation(libs.androidx.media)

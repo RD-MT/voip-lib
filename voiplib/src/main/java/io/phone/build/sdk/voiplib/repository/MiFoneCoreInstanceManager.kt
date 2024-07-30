@@ -255,7 +255,7 @@ internal class MiFoneCoreInstanceManager(private val context: Context): SimpleCo
         Log.i(TAG, "onSubscribeReceived: Not yet implemented")
     }
 
-    /*override fun onLogMessageWritten(service: LoggingService, domain: String, lev: org.linphone.core.LogLevel, message: String) {
+    /*override fun onLogMessageWritten(service: LoggingService, domain: String, lev: org.libs.core.LogLevel, message: String) {
         GlobalScope.launch(Dispatchers.IO) {
             voipLibConfig.logListener?.onLogMessageWritten(when (lev) {
                 Debug -> LogLevel.DEBUG
